@@ -1,0 +1,9 @@
+1und1
+fail
+32-231
+power(4*2,3)
+convertToDecimal(44)
+convertToOctal(o77)
+switchOperators(3,3+3)
+7+(*convertToOctal(34)+3)
+7+*33
