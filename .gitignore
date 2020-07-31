@@ -1,3 +1,4 @@
 calc
 y.tab.*
 lex.yy.c
+*.swp
