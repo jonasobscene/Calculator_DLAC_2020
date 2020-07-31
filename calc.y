@@ -40,17 +40,17 @@ function:
     FUN_TO_DEC BRACKET_OPEN numberOctal BRACKET_CLOSE { $$ = $3; } |
     FUN_TO_OCT BRACKET_OPEN numberDecimal BRACKET_CLOSE { $$ = $3; } |
     FUN_POWER BRACKET_OPEN factor COMMA factor BRACKET_CLOSE { $$ = (int)pow((double)$3, (double)$5); } |
-    FUN_SWITCH_OPS BRACKET_OPEN expr BRACKET_CLOSE {
-        $$ = $3; printf("%i", $3);
-         /*
-            does nothing for now
-            everything except this is working
-            i really need your help with this, Ms Koskova ;) 
-        */ 
-    };
+    FUN_SWITCH_OPS BRACKET_OPEN expr BRACKET_CLOSE { $$ = $3; };
 
 number: 
-    numberOctal { $$ = $1; }|
+    numberOctal {       int i = 0;
+                        long int decimal = 0;
+                        long int octal = $1;
+                        while (octal != 0) {
+                            decimal =  decimal +(octal % 10)* pow(8, i++);
+                            octal = octal / 10;
+                        }
+                        $$ = (int)decimal; } |
     numberDecimal { $$ = $1; };
 
 numberOctal: 

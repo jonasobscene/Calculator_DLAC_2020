@@ -10,9 +10,8 @@ NUM_DEC 0|[1-9][0-9]*
 %%
 {NUM_OCT}               { 
                             char *str = yytext;
-                            memmove(str, str+1, strlen(str));
-                            int result=strtol(str, NULL, 8);
-                            yylval=result;
+                            char *trimmedStr = memmove(str, str+1, strlen(str));
+                            yylval=atoi(trimmedStr);
                             return NUMBER_OCT;
                         }
 {NUM_DEC}               { 
