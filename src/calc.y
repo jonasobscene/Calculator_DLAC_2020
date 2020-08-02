@@ -1,6 +1,6 @@
 %{
     #include <stdio.h>
-    #include "./lib/functions.h"
+    #include "./../lib/functions.h"
     int yyerror(char *);
     int yylex(void);
 %}
