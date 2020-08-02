@@ -1,5 +1,5 @@
 FILENAME:=calc
-LIB_FUNCTIONS:= ./lib/functions.c
+LIB_FUNCTIONS:=./../lib/functions.c
 
 all: clear calc
 
